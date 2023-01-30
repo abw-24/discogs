@@ -1,7 +1,0 @@
-[debug] Created transactional ClassFileManager with tempDir = /Users/abw/Desktop/repos/discogs/discogs/project/target/scala-2.12/sbt-1.0/classes.bak
-[debug] About to delete class files:
-[debug] We backup class files:
-[debug] Registering generated classes:
-[debug] 	Dependencies$.class
-[debug] 	Dependencies.class
-[debug] Removing the temporary directory used for backing up class files: /Users/abw/Desktop/repos/discogs/discogs/project/target/scala-2.12/sbt-1.0/classes.bak
