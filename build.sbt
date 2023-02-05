@@ -8,7 +8,8 @@ lazy val root = (project in file("."))
     name := "discogs",
     libraryDependencies += munit % Test,
     libraryDependencies += "com.eed3si9n" %% "gigahorse-apache-http" % "0.7.0",
-    libraryDependencies += "ch.qos.logback" % "logback-classic" % "1.1.3" % Runtime
-  )
+    libraryDependencies += "com.github.plokhotnyuk.jsoniter-scala" %% "jsoniter-scala-core" % "2.20.6",
+    libraryDependencies += "com.github.plokhotnyuk.jsoniter-scala" %% "jsoniter-scala-macros"
+      % "2.20.6" % "compile-internal"
+)
 
-// See https://www.scala-sbt.org/1.x/docs/Using-Sonatype.html for instructions on how to publish to Sonatype.
