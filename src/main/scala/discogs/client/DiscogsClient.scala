@@ -1,7 +1,21 @@
 package discogs.client
 
-class DiscogsClient(private val token: String) {}
+import gigahorse._, support.apachehttp.Gigahorse
+import discogs.fetch.UserTokenFetcher
 
-object DiscogsClient {
-  def apply(token: String): DiscogsClient = new DiscogsClient(token)
+trait DiscogsClient {
+  def search(query: String): String
+}
+
+class UserTokenDiscogsClient(private val token: String) extends DiscogsClient {
+  def search(query: String): String = {
+    Gigahorse.withHttp(Gigahorse.config) { http =>
+      val fetcher = UserTokenFetcher(token, http)
+      fetcher.fetch(discogs.searchUrl + query)
+    }
+  }
+}
+
+object UserTokenDiscogsClient {
+  def apply(token: String): UserTokenDiscogsClient = new UserTokenDiscogsClient(token)
 }
