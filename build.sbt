@@ -6,7 +6,8 @@ ThisBuild / version          := "0.1.0-SNAPSHOT"
 lazy val root = (project in file("."))
   .settings(
     name := "discogs",
-    libraryDependencies += munit % Test
+    libraryDependencies += munit % Test,
+    libraryDependencies += "com.eed3si9n" %% "gigahorse-apache-http" % "0.7.0",
   )
 
 // See https://www.scala-sbt.org/1.x/docs/Using-Sonatype.html for instructions on how to publish to Sonatype.
