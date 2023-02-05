@@ -1,3 +1,2 @@
-# discogs
-Scala utilities for Discogs API interaction
-
+# discogs-scala
+Scala utilities for Discogs API interaction (WIP)
