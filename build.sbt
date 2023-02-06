@@ -8,8 +8,6 @@ lazy val root = (project in file("."))
     name := "discogs",
     libraryDependencies += munit % Test,
     libraryDependencies += "com.eed3si9n" %% "gigahorse-apache-http" % "0.7.0",
-    libraryDependencies += "com.github.plokhotnyuk.jsoniter-scala" %% "jsoniter-scala-core" % "2.20.6",
-    libraryDependencies += "com.github.plokhotnyuk.jsoniter-scala" %% "jsoniter-scala-macros"
-      % "2.20.6" % "compile-internal"
+    libraryDependencies += "com.typesafe.play" %% "play-json" % "2.9.4"
 )
 
