@@ -1,7 +1,7 @@
 package discogs
 
 import discogs.client.UserTokenDiscogsClient
-import play.api.libs.json.Json
+import discogs.models.SearchResponse
 
 object Search {
   def main(args: Array[String]): Unit = {
@@ -12,10 +12,7 @@ object Search {
     val queryBuilder = new StringBuilder()
     val queryString = queryList.addString(queryBuilder , "&").toString
     // Use the client to send query, parse result
-    val rawJs = Json.parse(client.search(queryString))
-    val resultsField = rawJs \\ "results"
-    // Print the first element from the first page of results
-    val firstPage = resultsField.head
-    println(Json.prettyPrint(firstPage(0)))
+    val res: SearchResponse = client.search(queryString)
+    println(res.toString)
   }
 }
