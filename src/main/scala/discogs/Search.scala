@@ -1,7 +1,7 @@
 package discogs
 
 import discogs.client.UserTokenDiscogsClient
-import discogs.models.SearchResponse
+import discogs.fetch.SearchResponse
 
 object Search {
   def main(args: Array[String]): Unit = {
